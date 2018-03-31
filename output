@@ -1,0 +1,53 @@
+gcc -o snek snek.cpp -lncurses -std=c++11
+In file included from /usr/include/c++/7.3.1/bits/stl_algobase.h:71:0,
+                 from /usr/include/c++/7.3.1/deque:60,
+                 from snek.cpp:5:
+/usr/include/c++/7.3.1/bits/predefined_ops.h: In instantiation of ‘bool __gnu_cxx::__ops::_Iter_equals_val<_Value>::operator()(_Iterator) [with _Iterator = std::_Deque_iterator<Bodypart, Bodypart&, Bodypart*>; _Value = const Bodypart]’:
+/usr/include/c++/7.3.1/bits/stl_algo.h:120:14:   required from ‘_RandomAccessIterator std::__find_if(_RandomAccessIterator, _RandomAccessIterator, _Predicate, std::random_access_iterator_tag) [with _RandomAccessIterator = std::_Deque_iterator<Bodypart, Bodypart&, Bodypart*>; _Predicate = __gnu_cxx::__ops::_Iter_equals_val<const Bodypart>]’
+/usr/include/c++/7.3.1/bits/stl_algo.h:161:23:   required from ‘_Iterator std::__find_if(_Iterator, _Iterator, _Predicate) [with _Iterator = std::_Deque_iterator<Bodypart, Bodypart&, Bodypart*>; _Predicate = __gnu_cxx::__ops::_Iter_equals_val<const Bodypart>]’
+/usr/include/c++/7.3.1/bits/stl_algo.h:3907:28:   required from ‘_IIter std::find(_IIter, _IIter, const _Tp&) [with _IIter = std::_Deque_iterator<Bodypart, Bodypart&, Bodypart*>; _Tp = Bodypart]’
+snek.cpp:22:56:   required from here
+/usr/include/c++/7.3.1/bits/predefined_ops.h:241:17: error: no match for ‘operator==’ (operand types are ‘Bodypart’ and ‘const Bodypart’)
+  { return *__it == _M_value; }
+           ~~~~~~^~~~~~~~~~~
+In file included from /usr/include/c++/7.3.1/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/7.3.1/deque:60,
+                 from snek.cpp:5:
+/usr/include/c++/7.3.1/bits/stl_iterator.h:859:5: note: candidate: template<class _IteratorL, class _IteratorR, class _Container> bool __gnu_cxx::operator==(const __gnu_cxx::__normal_iterator<_IteratorL, _Container>&, const __gnu_cxx::__normal_iterator<_IteratorR, _Container>&)
+     operator==(const __normal_iterator<_IteratorL, _Container>& __lhs,
+     ^~~~~~~~
+/usr/include/c++/7.3.1/bits/stl_iterator.h:859:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/7.3.1/bits/stl_algobase.h:71:0,
+                 from /usr/include/c++/7.3.1/deque:60,
+                 from snek.cpp:5:
+/usr/include/c++/7.3.1/bits/predefined_ops.h:241:17: note:   ‘Bodypart’ is not derived from ‘const __gnu_cxx::__normal_iterator<_IteratorL, _Container>’
+  { return *__it == _M_value; }
+           ~~~~~~^~~~~~~~~~~
+In file included from /usr/include/c++/7.3.1/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/7.3.1/deque:60,
+                 from snek.cpp:5:
+/usr/include/c++/7.3.1/bits/stl_iterator.h:866:5: note: candidate: template<class _Iterator, class _Container> bool __gnu_cxx::operator==(const __gnu_cxx::__normal_iterator<_Iterator, _Container>&, const __gnu_cxx::__normal_iterator<_Iterator, _Container>&)
+     operator==(const __normal_iterator<_Iterator, _Container>& __lhs,
+     ^~~~~~~~
+/usr/include/c++/7.3.1/bits/stl_iterator.h:866:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/7.3.1/bits/stl_algobase.h:71:0,
+                 from /usr/include/c++/7.3.1/deque:60,
+                 from snek.cpp:5:
+/usr/include/c++/7.3.1/bits/predefined_ops.h:241:17: note:   ‘Bodypart’ is not derived from ‘const __gnu_cxx::__normal_iterator<_Iterator, _Container>’
+  { return *__it == _M_value; }
+           ~~~~~~^~~~~~~~~~~
+In file included from /usr/include/c++/7.3.1/x86_64-pc-linux-gnu/bits/c++allocator.h:33:0,
+                 from /usr/include/c++/7.3.1/bits/allocator.h:46,
+                 from /usr/include/c++/7.3.1/deque:61,
+                 from snek.cpp:5:
+/usr/include/c++/7.3.1/ext/new_allocator.h:155:5: note: candidate: template<class _Tp> bool __gnu_cxx::operator==(const __gnu_cxx::new_allocator<_Tp>&, const __gnu_cxx::new_allocator<_Tp>&)
+     operator==(const new_allocator<_Tp>&, const new_allocator<_Tp>&)
+     ^~~~~~~~
+/usr/include/c++/7.3.1/ext/new_allocator.h:155:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/7.3.1/bits/stl_algobase.h:71:0,
+                 from /usr/include/c++/7.3.1/deque:60,
+                 from snek.cpp:5:
+/usr/include/c++/7.3.1/bits/predefined_ops.h:241:17: note:   ‘Bodypart’ is not derived from ‘const __gnu_cxx::new_allocator<_Tp>’
+  { return *__it == _M_value; }
+           ~~~~~~^~~~~~~~~~~
+make: *** [Makefile:2: snek] Błąd 1
